@@ -1,0 +1,9 @@
+<h1>Home</h1>
+
+<% @users.each do |user| %>
+    <p><%=user.fee%></p>
+    <p><%=user.value%></p>
+    <img src="<%= "/user_images/#{user.image}" %>">
+    <%=link_to(user.name,"user/#{user.id}/index") %>
+<% end %>
+
