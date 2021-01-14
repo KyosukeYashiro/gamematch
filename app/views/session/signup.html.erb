@@ -1,0 +1,11 @@
+<h1>新規会員登録</h1>
+
+<%=form_tag("/signup/create") do %>
+    <p>ユーザー名</p>
+    <input name="name">
+    <p>メールアドレス</p>
+    <input name="email">
+    <p>パスワード</p>
+    <input type="password" name="password">
+    <input type="submit" value="新規登録">
+<%end%>

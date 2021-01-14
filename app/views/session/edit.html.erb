@@ -1,0 +1,20 @@
+<%= form_tag("/update", {multipart: true}) do %>
+    <p>ユーザー名</p>
+    <input type="text" name="name" value="<%=@user.name%>">
+    <p>プロフィール</p>
+    <textarea name="profile"><%=@user.profile%></textarea> 
+    <p>時間給</p>
+    <input type="number" name="fee" value="<%=@user.fee%>">
+    <p>画像編集</p>
+    <input name="image" type="file"> 
+    <p>顔出しの有無</p>
+    <input type="radio" name="face" value="有">有
+    <input type="radio" name="face" value="無">無
+    <h3>対応ゲーム一覧</h3>
+    <% @games.each do |game| %>
+        <p><%=game.name%></p>
+    <% end %>
+
+    <input type="submit" value="保存する">
+<% end %>
+
