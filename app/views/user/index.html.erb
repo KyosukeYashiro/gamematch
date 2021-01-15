@@ -1,6 +1,13 @@
-<p class="test"><%=@user.fee%></p>
-<p><%=@user.value%></p>
-<p><%=@user.name%></p>
-<p><%=@user.face%></p>
-<p><%=@user.profile%></p>
-<img src="<%= "/user_images/#{@user.image}" %>">
+<div class="user_top">
+    <div class="user_left">
+        <h1 class="user_name"><%=@user.name%></h1>
+        <img src="<%= "/user_images/#{@user.image}" %>" ,class:"user_image">
+    </div>
+    <div class="user_right">
+        <p class="user_fee">1時間<%=@user.fee%>円</p>
+        <p class="user_profile">プロフィール<%=@user.profile%></p>
+        <p class="user_value">ユーザー評価<%=@user.value%></p>
+        <p class="user_face">顔出し有無<%=@user.face%></p>
+    </div>
+</div>
+

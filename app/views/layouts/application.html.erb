@@ -11,12 +11,17 @@
 
   <body>
     <header>
-      <%if session[:user_id]%>
-        <%=link_to("マイページ","/mypage", class: "header__register")%>
-      <%else%>
-        <%=link_to("新規登録","/signup",class: "header__register")%>
-          <%=link_to("ログイン","/login_form",class: "header__register")%>
-      <%end%>
+      <div class="header_container">
+        <%=link_to('GameMate',"/",class:"header_left")%>
+        <div class="header_right">
+          <%if session[:user_id]%>
+            <%=link_to("マイページ","/mypage", class: "header__register")%>
+          <%else%>
+            <%=link_to("新規登録","/signup",class: "header__register")%>
+            <%=link_to("ログイン","/login_form",class: "header__register")%>
+          <%end%>
+        </div>
+      </div>
     </header>
     <%= yield %>
   </body>

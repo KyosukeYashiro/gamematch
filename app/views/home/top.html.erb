@@ -1,9 +1,30 @@
-<h1>Home</h1>
+<div class="top_banner">
+    <%# app/assets/images %>
+    <%= image_tag "headerbanner.png", alt: "header icon", id: "assets", class: "top_banner_image" %>
+</div>
 
-<% @users.each do |user| %>
-    <p><%=user.fee%></p>
-    <p><%=user.value%></p>
-    <img src="<%= "/user_images/#{user.image}" %>">
-    <%=link_to(user.name,"user/#{user.id}/index") %>
-<% end %>
+<div class="top_game">
+    <h2>ゲームから探す</h2>
+    <div class="top_game_container">
+        <% @games.each do |game| %>
+            <div class="top_game_main">
+                <p class="top_game_titile"><%= game.name %></p>
+                <%# app/assets/images %>
+                <%= image_tag "#{game.image}" ,class:"top_game_image"%>
+            </div>
+        <% end %>
+    </div>
+</div>
+<h2>人気配信者一覧</h2>
+<div class="top_main">
+    <% @users.each do |user| %>
+        <div class="top_users">
+            <img src="<%= "/user_images/#{user.image}" %>" class="top_users_image">
+            <%=link_to(user.name,"user/#{user.id}/index") %>
+            <p class="top_users_fee">１時間<%=user.fee%>円</p>
+            <p class="top_users_value"><%=user.value%></p>
+        </div>
+    <% end %>
+</div>
+
 
