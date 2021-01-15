@@ -1,14 +1,21 @@
+<div class="user_top">
+    <div class="user_left">
+        <h1 class="user_name"><%=@user.name%></h1>
+        <img src="<%= "/user_images/#{@user.image}" %>" ,class:"user_image">
+    </div>
+    <div class="user_right">
+        <p class="user_fee">1時間<%=@user.fee%>円</p>
+        <p class="user_profile">プロフィール<%=@user.profile%></p>
+        <p class="user_value">ユーザー評価<%=@user.value%></p>
+        <p class="user_face">顔出し有無<%=@user.face%></p>
+        <h3>対応ゲーム一覧</h3>
+        <% @usergame.game_users.each do |game_user| %>
+            <p><%= game_user.game.name %></p>
+        <% end %>
+    </div>
+</div>
 
-<h1><%=@user.name%></h1>
-<h3>時間給<%=@user.fee%></h3>
-<h3>顔出し有無<%=@user.face%></h3>
-<h3>プロフィール<%=@user.profile%></h3>
-<h3>評価<%=@user.value%></h3>
-<img src="<%= "/user_images/#{@user.image}" %>">
-<h3>メールアドレス<%=@user.mail%></h3>
-<h3>対応ゲーム一覧</h3>
-<% @usergame.game_users.each do |game_user| %>
-    <p><%= game_user.game.name %></p>
-<% end %>
+
+
 <%=link_to('編集する',"mypage/edit")%>
 <%=link_to("ログアウト","/logout",method:"post",class:"header__register")%>
